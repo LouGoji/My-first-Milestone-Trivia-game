@@ -13,97 +13,97 @@ let availableQuestions = []
 let questions = [
     {
         question: 'What is Batman's ultimate quote?',
-        A: 'Believe me, Jim, I wish it were true, but deep inside, I doubt it.',
-        B: 'I want you to remember the one man who beat you.',
-        C: 'I am vengeance, I am the night, I am Batman!',
-        D: 'Goodnight, humanitarian.',
-        answer: B,
+        choice1: 'Believe me, Jim, I wish it were true, but deep inside, I doubt it.',
+        choice2: 'I want you to remember the one man who beat you.',
+        choice3: 'I am vengeance, I am the night, I am Batman!',
+        choice4: 'Goodnight, humanitarian.',
+        answer: 3,
     },
 
     {
         question: 'What is the one movie that has the same plot as the remake?',
-        A: 'Beauty and the Beast.',
-        B: 'Jungle Book.',
-        C: 'Cinderella.',
-        D: 'The Lion King.',
-        answer: D,
+        choice1: 'Beauty and the Beast.',
+        choice2: 'Jungle Book.',
+        choice3: 'Cinderella.',
+        choice4: 'The Lion King.',
+        answer: 4,
     },
 
     {
         question: 'Which girl would be perfect for Naruto?',
-        A: 'Hinata.',
-        B: 'Sakura.',
-        C: 'Ino.',
-        D: 'Tenten.',
-        answer: A,
+        choice1: 'Hinata.',
+        choice2: 'Sakura.',
+        choice3: 'Ino.',
+        choice4: 'Tenten.',
+        answer: 1,
     },
 
     {
         question: 'What is the top favorite Pokemon?',
-        A: 'Eevee.',
-        B: 'Lucario.',
-        C: 'Pikachu.',
-        D: 'Charizard.',
-        answer: D,
+        choice1: 'Eevee.',
+        choice2: 'Lucario.',
+        choice3: 'Pikachu.',
+        choice4: 'Charizard.',
+        answer: 4,
     },
 
     {
         question: 'Finish the quote. BLOCKADE! KANKERS!',
-        A: 'Can you guess what I'm doing?',
-        B: 'Gravy.',
-        C: 'EXTREME CLOSE-UP!',
-        D: 'Hello? Hello?.',
-        answer: C,
+        choice1: 'Can you guess what I'm doing?',
+        choice2: 'Gravy.',
+        choice3: 'EXTREME CLOSE-UP!',
+        choice4: 'Hello? Hello?.',
+        answer: 3,
     },
 
     {
         question: 'What dinosaur did King Kong fought?',
-        A: 'V-rex.',
-        B: 'T-rex.',
-        C: 'Skullcrawler.',
-        D: 'Giant Snake.',
-        answer: A,
+        choice1: 'V-rex.',
+        choice2: 'T-rex.',
+        choice3: 'Skullcrawler.',
+        choice4: 'Giant Snake.',
+        answer: 1,
     },
 
     {
         question: 'When did the first Godzilla came out?',
-        A: '1933.',
-        B: '1954.',
-        C: '2014.',
-        D: '1998.',
-        answer: B,
+        choice1: '1933.',
+        choice2: '1954.',
+        choice3: '2014.',
+        choice4: '1998.',
+        answer: 2,
     },
 
     {
         question: 'What song did Iroh sing?',
-        A: 'Four Seasons.',
-        B: 'It's a long long way to Ba Sing Sa.',
-        C: 'He uses his tsungi horn',
-        D: 'Leaves from the vine.',
-        answer: D,
+        choice1: 'Four Seasons.',
+        choice2: 'It's a long long way to Ba Sing Sa.',
+        choice3: 'He uses his tsungi horn',
+        choice4: 'Leaves from the vine.',
+        answer: 4,
     },
 
     {
         question: 'Should the Teen Titans (2003) have a crossover with other movies and/or shows?',
-        A: 'Yes.',
-        B: 'No.',
-        C: 'Maybe.',
-        D: 'It already happened!',
-        answer: A,
+        choice1: 'Yes.',
+        choice2: 'No.',
+        choice3: 'Maybe.',
+        choice4: 'It already happened!',
+        answer: 1,
     },
 
     {
         question: 'What is the first gaming console?',
-        A: 'Nintendo.',
-        B: 'Xbox.',
-        C: 'The Magnavox Odyssey.',
-        D: 'PlayStation.',
-        answer: C,
+        choice1: 'Nintendo.',
+        choice2: 'Xbox.',
+        choice3: 'The Magnavox Odyssey.',
+        choice4: 'PlayStation.',
+        answer: 3,
     },
 ]
 
 const SCORE_POINTS = 100
-const MAX_QUESTIONS = 4
+const MAX_QUESTIONS = 10
 
 startGame = () => {
     questionCounter = 0
