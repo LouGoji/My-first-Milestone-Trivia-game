@@ -12,7 +12,7 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: What is Batman's ultimate quote?',
+        question: 'What is Batman's ultimate quote?',
         A: 'Believe me, Jim, I wish it were true, but deep inside, I doubt it.',
         B: 'I want you to remember the one man who beat you.',
         C: 'I am vengeance, I am the night, I am Batman!',
@@ -21,7 +21,7 @@ let questions = [
     },
 
     {
-        question: What is the one movie that has the same plot as the remake?',
+        question: 'What is the one movie that has the same plot as the remake?',
         A: 'Beauty and the Beast.',
         B: 'Jungle Book.',
         C: 'Cinderella.',
@@ -30,7 +30,7 @@ let questions = [
     },
 
     {
-        question: Which girl would be perfect for Naruto?',
+        question: 'Which girl would be perfect for Naruto?',
         A: 'Hinata.',
         B: 'Sakura.',
         C: 'Ino.',
@@ -39,7 +39,7 @@ let questions = [
     },
 
     {
-        question: Who is your favorite Pokemon?',
+        question: 'What is the top favorite Pokemon?',
         A: 'Eevee.',
         B: 'Lucario.',
         C: 'Pikachu.',
@@ -48,7 +48,7 @@ let questions = [
     },
 
     {
-        question: Finish the quote. BLOCKADE! KANKERS!',
+        question: 'Finish the quote. BLOCKADE! KANKERS!',
         A: 'Can you guess what I'm doing?',
         B: 'Gravy.',
         C: 'EXTREME CLOSE-UP!',
@@ -57,7 +57,7 @@ let questions = [
     },
 
     {
-        question: What dinosaur did King Kong fought?',
+        question: 'What dinosaur did King Kong fought?',
         A: 'V-rex.',
         B: 'T-rex.',
         C: 'Skullcrawler.',
@@ -66,16 +66,16 @@ let questions = [
     },
 
     {
-        question: When did the first Godzilla came out?',
+        question: 'When did the first Godzilla came out?',
         A: '1933.',
         B: '1954.',
-        C: '1962.',
+        C: '2014.',
         D: '1998.',
         answer: B,
     },
 
     {
-        question: What song did Iroh sing?',
+        question: 'What song did Iroh sing?',
         A: 'Four Seasons.',
         B: 'It's a long long way to Ba Sing Sa.',
         C: 'He uses his tsungi horn',
@@ -84,7 +84,7 @@ let questions = [
     },
 
     {
-        question: Should the Teen Titans (2003) have a crossover with other movies and/or shows?',
+        question: 'Should the Teen Titans (2003) have a crossover with other movies and/or shows?',
         A: 'Yes.',
         B: 'No.',
         C: 'Maybe.',
@@ -93,13 +93,13 @@ let questions = [
     },
 
     {
-        question: What is the first gaming console?',
+        question: 'What is the first gaming console?',
         A: 'Nintendo.',
         B: 'Xbox.',
         C: 'The Magnavox Odyssey.',
         D: 'PlayStation.',
         answer: C,
-    }
+    },
 ]
 
 const SCORE_POINTS = 100
@@ -115,6 +115,7 @@ startGame = () => {
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
+        
         return window.location.assign('/end.html')
     }
 
@@ -122,5 +123,47 @@ getNewQuestion = () => {
     progressText.innerText = 'Question ${questionCounter} of ${MAX_QUESTIONS}'
     progressBarFull.style.width = '${(questionCounter/MAX_QUESTION) * 100}%'
 
-    const questionIndex = Math.floor
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion =availableQuestions[questionIndex]
+    question.innerText = currentQuestion.question
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice + number']
+    })
+
+    availableQuestions.splice(questionIndex, 1)
+
+    acceptingAnswers = true
 }
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return
+
+        acceptingAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToApply === 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+
+        }, 1000)
+    })
+})
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+startGame()
