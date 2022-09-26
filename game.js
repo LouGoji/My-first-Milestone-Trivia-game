@@ -12,7 +12,7 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: 'What is Batman's ultimate quote?',
+        question: 'What is Batman_s ultimate quote?',
         choice1: 'Believe me, Jim, I wish it were true, but deep inside, I doubt it.',
         choice2: 'I want you to remember the one man who beat you.',
         choice3: 'I am vengeance, I am the night, I am Batman!',
@@ -49,7 +49,7 @@ let questions = [
 
     {
         question: 'Finish the quote. BLOCKADE! KANKERS!',
-        choice1: 'Can you guess what I'm doing?',
+        choice1: 'Can you guess what I_m doing?',
         choice2: 'Gravy.',
         choice3: 'EXTREME CLOSE-UP!',
         choice4: 'Hello? Hello?.',
@@ -77,7 +77,7 @@ let questions = [
     {
         question: 'What song did Iroh sing?',
         choice1: 'Four Seasons.',
-        choice2: 'It's a long long way to Ba Sing Sa.',
+        choice2: 'It_s a long long way to Ba Sing Sa.',
         choice3: 'He uses his tsungi horn',
         choice4: 'Leaves from the vine.',
         answer: 4,
