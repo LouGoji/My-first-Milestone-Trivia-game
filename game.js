@@ -120,7 +120,7 @@ getNewQuestion = () => {
     }
 
     questionCounter++
-    progressText.innerText = 'Question ${questionCounter} of ${MAX_QUESTIONS}'
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = '${(questionCounter/MAX_QUESTION) * 100}%'
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length)
@@ -129,7 +129,8 @@ getNewQuestion = () => {
 
     choices.forEach(choice => {
         const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice + number']
+        choice.innerText = currentQuestion["choice"+number]
+        console.log()
     })
 
     availableQuestions.splice(questionIndex, 1)
