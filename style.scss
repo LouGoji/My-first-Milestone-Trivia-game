@@ -1,0 +1,93 @@
+@import "game";
+@import "highscores";
+
+// Variables
+$primary-color: #0400ff;
+$secondary-color: #0400ff;
+$background-color: #00ffff;
+
+// Mixins
+@mixin button-style {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+// Styles
+body {
+  background-color: $background-color;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: $primary-color;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: $secondary-color;
+  margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 19px;
+    font-weight: bold;
+    color: $secondary-color;
+    margin-bottom: 10px;
+  }
+
+p {
+  font-size: 16px;
+  color: #000;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+
+button {
+  @include button-style;
+  margin-top: 20px;
+}
+
+.btn-container {
+    width: 100px;
+    height: 60px;
+    background-color: lightgreen;
+    border-radius: 10px;
+    text-align: center;
+    
+    .btn {
+        color: red;
+        position: relative;
+        top: 18px;
+        text-decoration: none;
+    }
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+}

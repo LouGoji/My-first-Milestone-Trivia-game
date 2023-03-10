@@ -1,5 +1,3 @@
-@import url("/Users/loiuismantell/Coding/My first Trivia game/game.css");
-@import url("/Users/loiuismantell/Coding/My first Trivia game/highscores.css");
 body {
   background-color: #00ffff;
   font-family: Arial, sans-serif;
@@ -80,4 +78,4 @@ input[type="text"] {
   font-size: 16px;
   margin-bottom: 20px;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index-1.css.map */

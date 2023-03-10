@@ -1,0 +1,28 @@
+body {
+    color: rgb(128, 0, 255);
+}
+
+#highScoresList {
+    list-style: none;
+    margin-bottom: 4rem;
+}
+
+.high-score {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-container {
+    width: 100px;
+    height: 60px;
+    background-color: lightgreen;
+    border-radius: 10px;
+    text-align: center;
+    
+    .btn {
+        color: red;
+        position: relative;
+        top: 18px;
+        text-decoration: none;
+    }
+}
