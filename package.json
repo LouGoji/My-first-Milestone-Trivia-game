@@ -1,0 +1,16 @@
+{
+  "name": "my-first-trivia-game",
+  "version": "1.0.0",
+  "description": "This is my first trivia game for coding. it's also a one player game. please enjoy and if you have any questions please let me know.",
+  "main": "end.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
+}
